@@ -1,9 +1,0 @@
-C:\stacks\stacks-dotnet-packages-messaging-asb\src\Amido.Stacks.Messaging.Azure.ServiceBus\bin\Debug\netstandard2.0\Amido.Stacks.Messaging.Azure.ServiceBus.deps.json
-C:\stacks\stacks-dotnet-packages-messaging-asb\src\Amido.Stacks.Messaging.Azure.ServiceBus\bin\Debug\netstandard2.0\Amido.Stacks.Messaging.Azure.ServiceBus.dll
-C:\stacks\stacks-dotnet-packages-messaging-asb\src\Amido.Stacks.Messaging.Azure.ServiceBus\bin\Debug\netstandard2.0\Amido.Stacks.Messaging.Azure.ServiceBus.pdb
-C:\stacks\stacks-dotnet-packages-messaging-asb\src\Amido.Stacks.Messaging.Azure.ServiceBus\obj\Debug\netstandard2.0\Amido.Stacks.Messaging.Azure.ServiceBus.csproj.AssemblyReference.cache
-C:\stacks\stacks-dotnet-packages-messaging-asb\src\Amido.Stacks.Messaging.Azure.ServiceBus\obj\Debug\netstandard2.0\Amido.Stacks.Messaging.Azure.ServiceBus.AssemblyInfoInputs.cache
-C:\stacks\stacks-dotnet-packages-messaging-asb\src\Amido.Stacks.Messaging.Azure.ServiceBus\obj\Debug\netstandard2.0\Amido.Stacks.Messaging.Azure.ServiceBus.AssemblyInfo.cs
-C:\stacks\stacks-dotnet-packages-messaging-asb\src\Amido.Stacks.Messaging.Azure.ServiceBus\obj\Debug\netstandard2.0\Amido.Stacks.Messaging.Azure.ServiceBus.csproj.CoreCompileInputs.cache
-C:\stacks\stacks-dotnet-packages-messaging-asb\src\Amido.Stacks.Messaging.Azure.ServiceBus\obj\Debug\netstandard2.0\Amido.Stacks.Messaging.Azure.ServiceBus.dll
-C:\stacks\stacks-dotnet-packages-messaging-asb\src\Amido.Stacks.Messaging.Azure.ServiceBus\obj\Debug\netstandard2.0\Amido.Stacks.Messaging.Azure.ServiceBus.pdb

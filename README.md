@@ -11,6 +11,7 @@ The main goal is:
 ## 1. Registration/Usage
 
 ### 1.1 Dependencies
+ - `Amido.Stacks.Configuration`
  - `Amido.Stacks.Application.CQRS.Abstractions`
  - `Amido.Stacks.DependencyInjection`
  - `Microsoft.Azure.ServiceBus`

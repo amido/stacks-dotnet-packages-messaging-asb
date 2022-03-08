@@ -16,7 +16,7 @@
     <PackageReference Include="Amido.Stacks.Configuration" Version="0.2.20" />
     <PackageReference Include="Amido.Stacks.DependencyInjection" Version="0.2.19" />
     <PackageReference Include="Microsoft.Azure.ServiceBus" Version="5.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="6.0.3" />
     <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions" Version="6.0.1" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />

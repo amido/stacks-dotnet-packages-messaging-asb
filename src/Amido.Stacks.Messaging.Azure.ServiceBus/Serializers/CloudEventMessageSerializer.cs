@@ -29,7 +29,8 @@ namespace Amido.Stacks.Messaging.Azure.ServiceBus.Serializers
 
             return message
                 .SetEnclosedMessageType(typeof(StacksCloudEvent<>).MakeGenericType(body.GetType()))
-                .SetSerializerType(this.GetType());
+                .SetSerializerType(this.GetType())
+                .SetSessionId(body);
         }
 
         public T Read<T>(Message message)

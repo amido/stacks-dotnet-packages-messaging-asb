@@ -1,4 +1,5 @@
 using System;
+using Amido.Stacks.Messaging.Azure.ServiceBus.Serializers;
 using Microsoft.Azure.ServiceBus;
 
 namespace Amido.Stacks.Messaging.Azure.ServiceBus.Extensions
@@ -34,6 +35,13 @@ namespace Amido.Stacks.Messaging.Azure.ServiceBus.Extensions
         {
             var key = $"{MessageProperties.Serializer}";
             message.UserProperties[key] = type.GetTypeNameWithAssembly();
+            return message;
+        }
+        
+        public static Message SetSessionId(this Message message, object body)
+        {
+            var ctx = body as ISessionContext;
+            message.SessionId = ctx?.SessionId;
             return message;
         }
     }

@@ -56,7 +56,7 @@ namespace Amido.Stacks.Messaging.Azure.ServiceBus.Tests.UnitTests.Deserializers
             var correlationId = Guid.NewGuid();
             var message = new Message
             {
-                Body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(new NotifyEvent(correlationId, 321)))
+                Body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(new NotifyEvent(correlationId, 321, "session-id")))
             };
 
             message.SetEnclosedMessageType(typeof(NotifyEvent));
@@ -66,6 +66,7 @@ namespace Amido.Stacks.Messaging.Azure.ServiceBus.Tests.UnitTests.Deserializers
             result.ShouldNotBeNull();
             result.ShouldBeOfType(typeof(NotifyEvent));
             result.CorrelationId.ShouldBe(correlationId);
+            result.SessionId.ShouldBe("session-id");
         }
     }
 }

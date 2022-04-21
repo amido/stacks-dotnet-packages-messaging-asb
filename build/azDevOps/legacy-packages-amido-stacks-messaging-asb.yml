@@ -42,7 +42,7 @@ variables:
   - name: BuildPipeline.Path
     value: "build/azDevOps/packages-amido-stacks-messaging-asb.yml"
   - name: DotNet.Version
-    value: "3.1.x"
+    value: "6.0.x"
   # Yamllint
   - name: yamllint_config_file
     value: "${{ variables.self_repo_dir }}/yamllint.conf"

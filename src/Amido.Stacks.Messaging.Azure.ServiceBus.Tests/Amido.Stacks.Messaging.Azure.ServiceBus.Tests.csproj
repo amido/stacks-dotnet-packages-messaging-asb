@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>10.0</LangVersion>
     <IsPackable>false</IsPackable>
-  </PropertyGroup>
+</PropertyGroup>
 
   <ItemGroup>
 	<PackageReference Include="Amido.Stacks.DependencyInjection" Version="0.2.19" />

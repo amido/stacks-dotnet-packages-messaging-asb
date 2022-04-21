@@ -107,10 +107,10 @@ stages:
           # Build
           - template: azDevOps/azure/templates/v2/steps/build-pack-test-dotnet.yml@templates
             parameters:
-              test_path: "$(Test.Path)"
-              package_path: "$(Package.Path)"
-              package_feed: "$(Package.Feed)"
-              dotnet_core_version: "$(DotNet.Version)"
+              test_path: "${{variables.Test.Path}}"
+              package_path: "${{variables.Package.Path}}"
+              package_feed: "${{variables.Package.Feed}}"
+              dotnet_core_version: "${{variables.DotNet.Version}}"
 
           # Publish
           - task: NuGetCommand@2
@@ -120,4 +120,4 @@ stages:
               command: 'push'
               packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
               nuGetFeedType: 'external'
-              publishFeedCredentials: "$(Package.nuget_service_connection)"
+              publishFeedCredentials: "${{variables.Package.nuget_service_connection}}"

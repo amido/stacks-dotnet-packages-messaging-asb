@@ -108,7 +108,7 @@ stages:
           - template: azDevOps/azure/templates/v2/steps/build-pack-test-dotnet.yml@templates
             parameters:
               test_path: "${{variables.Test.Path}}"
-              package_path: "${{variables.Package.Path}}"
+              package_path: "src/Amido.Stacks.Messaging.Azure.ServiceBus"
               package_feed: "${{variables.Package.Feed}}"
               dotnet_core_version: "${{variables.DotNet.Version}}"
 

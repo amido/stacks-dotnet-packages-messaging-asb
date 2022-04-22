@@ -23,7 +23,7 @@ resources:
       ref: refs/tags/v2.0.6
       # Created when you set up the connection to GitHub from Azure DevOps
       endpoint: amidostacks
-      
+
 variables:
   - template: legacy-packages-amido-stacks-messaging-asb-vars.yml
 
@@ -44,14 +44,6 @@ stages:
               sourcebranch_name: "$(Build.SourceBranchName)"
               raw_version_number: "$(Version.Number)"
               default_branch: 'main'
-
-          # Validates all YAML files in the repo to check they adhere to standards
-          - template: azDevOps/azure/templates/v3/steps/build/test-validate-yaml.yml@templates
-            parameters:
-              pipeline_scripts_directory: "${{ variables.self_pipeline_scripts_dir }}"
-              container: "k8s_deploy"
-              yamllint_config_file: "${{ variables.yamllint_config_file }}"
-              yamllint_scan_directory: "${{ variables.yamllint_scan_directory }}"
 
           # Build
           - template: azDevOps/azure/templates/v2/steps/build-pack-test-dotnet.yml@templates

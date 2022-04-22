@@ -56,7 +56,7 @@ stages:
           # Publish
           - task: NuGetCommand@2
             displayName: 'Publish: Push Packages Public'
-            condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['Build.SourceBranch'], 'refs/heads/main')))
+            # condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['Build.SourceBranch'], 'refs/heads/main')))
             inputs:
               command: 'push'
               packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'

@@ -23,10 +23,7 @@ resources:
       ref: refs/tags/v2.0.6
       # Created when you set up the connection to GitHub from Azure DevOps
       endpoint: amidostacks
-  containers:
-    - container: k8s_deploy
-      image: amidostacks/ci-k8s:0.0.11
-
+      
 variables:
   - template: legacy-packages-amido-stacks-messaging-asb-vars.yml
 

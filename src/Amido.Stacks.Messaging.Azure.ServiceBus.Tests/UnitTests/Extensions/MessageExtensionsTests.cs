@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Amido.Stacks.Messaging.Azure.ServiceBus.Extensions;
 using Amido.Stacks.Messaging.Commands;
 using Amido.Stacks.Messaging.Events;
-using FluentAssertions;
 using Microsoft.Azure.ServiceBus;
 using Shouldly;
 using Xunit;
@@ -36,7 +35,7 @@ namespace Amido.Stacks.Messaging.Azure.ServiceBus.Tests.UnitTests.Extensions
         {
             var message = new Message();
             message.SetSessionId(new NotifyEvent(Guid.NewGuid(), 1, "session-id"));
-            message.SessionId.Should().Be("session-id");
+            message.SessionId.ShouldBe("session-id");
         }
         
         [Fact]
@@ -44,7 +43,7 @@ namespace Amido.Stacks.Messaging.Azure.ServiceBus.Tests.UnitTests.Extensions
         {
             var message = new Message();
             message.SetSessionId(new DummyEvent());
-            message.SessionId.Should().BeNull();
+            message.SessionId.ShouldBeNull();
         }
     }
 

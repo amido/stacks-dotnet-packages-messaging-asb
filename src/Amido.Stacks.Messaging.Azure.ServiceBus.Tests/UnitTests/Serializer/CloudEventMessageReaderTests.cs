@@ -35,7 +35,7 @@ namespace Amido.Stacks.Messaging.Azure.ServiceBus.Tests.UnitTests.Deserializers
             var serializer = new CloudEventMessageSerializer();
 
             var correlationId = Guid.NewGuid();
-            var message = serializer.Build(new NotifyEvent(correlationId, 321));
+            var message = serializer.Build(new NotifyEvent(correlationId, 321, "session-id"));
 
             var result = serializer.Read<IApplicationEvent>(message) as NotifyEvent;
 
@@ -44,6 +44,7 @@ namespace Amido.Stacks.Messaging.Azure.ServiceBus.Tests.UnitTests.Deserializers
             result.EventCode.ShouldBe(123);
             result.CorrelationId.ShouldBe(correlationId);
             result.OperationCode.ShouldBe(321);
+            result.SessionId.ShouldBe("session-id");
         }
     }
 }

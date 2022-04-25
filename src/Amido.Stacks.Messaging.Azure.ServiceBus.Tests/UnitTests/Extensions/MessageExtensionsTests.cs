@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Amido.Stacks.Messaging.Azure.ServiceBus.Extensions;
 using Amido.Stacks.Messaging.Commands;
+using Amido.Stacks.Messaging.Events;
 using Microsoft.Azure.ServiceBus;
 using Shouldly;
 using Xunit;
@@ -26,6 +28,22 @@ namespace Amido.Stacks.Messaging.Azure.ServiceBus.Tests.UnitTests.Extensions
                 .SetEnclosedMessageType(typeof(NotifyCommand));
             message.UserProperties.Count.ShouldBe(1);
             message.UserProperties["EnclosedMessageType"].ShouldBe("Amido.Stacks.Messaging.Commands.NotifyCommand, Amido.Stacks.Messaging.Commands");
+        }
+        
+        [Fact]
+        public void MessageExtensionSetSessionId()
+        {
+            var message = new Message();
+            message.SetSessionId(new NotifyEvent(Guid.NewGuid(), 1, "session-id"));
+            message.SessionId.ShouldBe("session-id");
+        }
+        
+        [Fact]
+        public void MessageExtensionSetSessionIdIgnoresMissingSessionId()
+        {
+            var message = new Message();
+            message.SetSessionId(new DummyEvent());
+            message.SessionId.ShouldBeNull();
         }
     }
 

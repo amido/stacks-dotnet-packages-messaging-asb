@@ -23,7 +23,8 @@ namespace Amido.Stacks.Messaging.Azure.ServiceBus.Serializers
 
             return convertedMessage
                 .SetEnclosedMessageType(body.GetType())
-                .SetSerializerType(GetType());
+                .SetSerializerType(GetType())
+                .SetSessionId(body);
         }
 
         /// <summary>

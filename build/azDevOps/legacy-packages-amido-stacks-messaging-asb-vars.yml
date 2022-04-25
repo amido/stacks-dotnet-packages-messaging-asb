@@ -1,0 +1,48 @@
+variables:
+  # Versioning
+  - name: Version.Major
+    value: 0
+  - name: Version.Minor
+    value: 2
+  - name: Version.Revision
+    value: $[counter(variables['Version.Minor'], 0)]
+  - name: Version.Number
+    value: $(Version.Major).$(Version.Minor).$(Version.Revision)
+  # DevOps Scripts Package Info
+  - name: DevOps.File
+    value: scripts-1.1.0-master.tar.gz
+  - name: DevOps.Container
+    value: packages
+  - name: DevOps.storageAccount
+    value: amidostacksuksprod
+  - name: DevOps.RG
+    value: amido-stacks-rg-uks-prod
+  # SelfConfig
+  - name: self_repo
+    value: stacks-dotnet-packages-messaging-asb
+  - name: self_repo_dir
+    value: "$(Agent.BuildDirectory)/s/$(self_repo)"
+  - name: self_pipeline_repo
+    value: "$(Agent.BuildDirectory)/s/stacks-pipeline-templates"
+  - name: self_pipeline_scripts_dir
+    value: "$(self_pipeline_repo)/scripts"
+  # Path specific for this package, change accordingly
+  - name: Package.Feed
+    value: "Stacks"
+  - name: Package.Public
+    value: true
+  - name: Package.nuget_service_connection
+    value: NuGetAmidoStacksServiceConnection
+  - name: Package.Path
+    value: "src/Amido.Stacks.Messaging.Azure.ServiceBus"
+  - name: Test.Path
+    value: "$(Package.Path).Tests"
+  - name: BuildPipeline.Path
+    value: "build/azDevOps/packages-amido-stacks-messaging-asb.yml"
+  - name: DotNet.Version
+    value: "6.0.x"
+  # Yamllint
+  - name: yamllint_config_file
+    value: "${{ variables.self_repo_dir }}/yamllint.conf"
+  - name: yamllint_scan_directory
+    value: "."

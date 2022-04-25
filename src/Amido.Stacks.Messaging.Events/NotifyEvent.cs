@@ -12,15 +12,14 @@ namespace Amido.Stacks.Messaging.Events
         public string Id { get; } = Guid.NewGuid().ToString();
         public DateTime? Time { get; } = DateTime.UtcNow;
         public string Subject { get; set; }
-        
         public string SessionId { get; set; }
 
         public NotifyEvent(Guid correlationId, int operationCode, string sessionId = null, string subject = null)
         {
             this.CorrelationId = correlationId;
             this.OperationCode = operationCode;
-            this.Subject = subject;
             this.SessionId = sessionId;
+            this.Subject = subject;
         }
     }
 }

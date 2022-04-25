@@ -3,7 +3,7 @@ variables:
   - name: Version.Major
     value: 0
   - name: Version.Minor
-    value: 2
+    value: 3
   - name: Version.Revision
     value: $[counter(variables['Version.Minor'], 0)]
   - name: Version.Number
